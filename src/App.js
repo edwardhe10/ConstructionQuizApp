@@ -51,7 +51,9 @@ function App() {
     setCurrentQuestion(0);
     setScore(0);
     setShowScore(false);
-    shuffleArray(quizData); // Randomize
+    shuffleArray(quizData); // Randomize questions order
+    // Randomize options order for each question
+    quizData.forEach((question) => shuffleArray(question.options));
   };
 
   return (
